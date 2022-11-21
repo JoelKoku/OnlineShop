@@ -1,0 +1,36 @@
+﻿@using OnlineShop.Models;
+@model IEnumerable<ProductTypes>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-info">Product Type List</h2>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-info">&nbsp; New Product Type</a>
+    </div>
+</div>
+<br/>
+<div>
+    <table class="table table-stripped border">
+        <tr class="table-info">
+            <th>
+                @Html.DisplayNameFor(c => c.ProductType)
+            </th>
+            <th></th>
+            @foreach (var item in Model)
+            {
+                <tr>
+                <td>@item.ProductType</td>
+                <td>
+                    <partial name="_PartialView" model="@item.Id"/>
+                </td>
+            </tr>
+        }
+        </table>
+</div>
+

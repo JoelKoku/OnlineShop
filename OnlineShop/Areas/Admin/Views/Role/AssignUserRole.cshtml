@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-info">Assign User Role</h2>
+    </div>
+   
+</div>
+<br />
+<div>
+    <table class="table table-stripped border">
+        <tr class="table-info">
+            <th>
+               User Name
+            </th>
+
+            <th>Role Name </th>
+
+            </tr>
+            @foreach (var item in ViewBag.UserRoles)
+            {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.RoleName</td>
+            </tr>
+        }
+        </table>
+    </div>
+
+
+
+
